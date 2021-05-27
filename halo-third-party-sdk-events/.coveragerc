@@ -1,0 +1,12 @@
+[run]
+branch = True
+
+[report]
+include =
+    halo_third_party_sdk_events/*
+omit =
+    halo_third_party_sdk_events/verifier_constants.py
+exclude_lines =
+    if typing.TYPE_CHECKING:
+    pass
+    raise NotImplementedError
