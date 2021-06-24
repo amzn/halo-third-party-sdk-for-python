@@ -1,0 +1,3 @@
+six >= 1.10
+setuptools >= 21.0.0
+python_dateutil
