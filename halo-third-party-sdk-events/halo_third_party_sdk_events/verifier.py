@@ -33,7 +33,9 @@ from cryptography.x509 import (
     load_pem_x509_certificate, ExtensionOID, DNSName, 
     SubjectAlternativeName)
 from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives.asymmetric.padding import PKCS1v15
+from cryptography.hazmat.primitives.asymmetric.padding import (
+    MGF1, PSS
+)
 from cryptography.hazmat.primitives.hashes import SHA256
 from cryptography.exceptions import InvalidSignature
 from contextlib import closing
@@ -121,7 +123,7 @@ class RequestVerifier(AbstractVerifier):
             self,
             signature_cert_chain_url_key=SIGNATURE_CERT_CHAIN_URL_HEADER,
             signature_key=SIGNATURE_HEADER,
-            padding=PKCS1v15(), hash_algorithm=SHA256()):
+            padding=PSS(mgf=MGF1(SHA256()), salt_length=32), hash_algorithm=SHA256()):
         # type: (str, str, AsymmetricPadding, HashAlgorithm) -> None
         """Verifier that performs request signature verification.
 

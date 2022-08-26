@@ -23,7 +23,7 @@ SIGNATURE_CERT_CHAIN_URL_HEADER = "SignatureCertChainUrl"
 
 #: Header key to be used, to retrieve request header that contains the
 #: request signature.
-SIGNATURE_HEADER = "SignatureSha256"
+SIGNATURE_HEADER = "Signature"
 
 #: Case insensitive protocol to be checked on signature certificate url.
 CERT_CHAIN_URL_PROTOCOL = "https"
