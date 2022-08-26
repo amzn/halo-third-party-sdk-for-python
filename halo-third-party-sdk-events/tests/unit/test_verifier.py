@@ -29,7 +29,9 @@ from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.x509.oid import NameOID
 from cryptography import x509
 from cryptography.hazmat.primitives.hashes import SHA256
-from cryptography.hazmat.primitives.asymmetric.padding import PKCS1v15
+from cryptography.hazmat.primitives.asymmetric.padding import (
+    MGF1, PSS
+)
 from halo_third_party_sdk_model import RequestEnvelope
 from halo_third_party_sdk_events.verifier import (
     RequestVerifier, TimestampVerifier, VerificationException)
@@ -124,7 +126,7 @@ class TestRequestVerifier(unittest.TestCase):
 
     def sign_data(
             self, data, private_key=None,
-            padding=PKCS1v15(), hash_algorithm=SHA256()):
+            padding=PSS(mgf=MGF1(SHA256()), salt_length=32), hash_algorithm=SHA256()):
         if private_key is None:
             private_key = self.private_key
 

@@ -19,7 +19,7 @@ __pip_package_name__ = 'halo-third-party-sdk-events'
 __description__ = ('The Halo Third Party SDK Events package provides support for '
                    'verifying the authenticity of events.')
 __url__ = 'https://github.com/amzn/halo-third-party-sdk-for-python'
-__version__ = '1.0.0'
+__version__ = '2.0.0'
 __author__ = 'Amazon Halo'
 __author_email__ = 'healthtech-partner-engineering-support@amazon.com'
 __license__ = 'Apache 2.0'

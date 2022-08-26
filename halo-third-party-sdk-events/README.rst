@@ -9,6 +9,10 @@ What is Halo Third Party SDK for Python
 
 The Halo Third Party SDK for Python makes it easier for you to verify events and allows you to spend more time on implementing features and less on writing boiler-plate code.
 
+Difference between 2.x and 1.x versions
+-------------------------
+Message validation was changed as a part of a security campaign.
+
 Quick Start
 -----------
 
