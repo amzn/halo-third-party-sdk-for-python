@@ -35,7 +35,7 @@ class RequestEnvelope(object):
     :type version: (optional) str
     :param timestamp: The data and time the notification was sent, encoded in extended ISO 8601 date/time format (yyyy-mm-ddThh:mm:ss.mmmZ).
     :type timestamp: (optional) str
-    :param object_type: The notification type, which can have values &#39;HEALTH_METRIC&#39;, &#39;HEALTH_METRIC_TEST&#39;, or &#39;DEAUTHORIZATION&#39;.
+    :param object_type: The notification type, which can have values &#39;HEALTH_METRIC&#39;, &#39;HEALTH_METRIC_TEST&#39;, &#39;DEAUTHORIZATION&#39;, &#39;HEALTH_METRIC_DELETION&#39;, or &#39;HEALTH_METRIC_DELETION_TEST&#39;.
     :type object_type: (optional) str
     :param data: 
     :type data: (optional) halo_third_party_sdk_model.data.Data
@@ -64,7 +64,7 @@ class RequestEnvelope(object):
         :type version: (optional) str
         :param timestamp: The data and time the notification was sent, encoded in extended ISO 8601 date/time format (yyyy-mm-ddThh:mm:ss.mmmZ).
         :type timestamp: (optional) str
-        :param object_type: The notification type, which can have values &#39;HEALTH_METRIC&#39;, &#39;HEALTH_METRIC_TEST&#39;, or &#39;DEAUTHORIZATION&#39;.
+        :param object_type: The notification type, which can have values &#39;HEALTH_METRIC&#39;, &#39;HEALTH_METRIC_TEST&#39;, &#39;DEAUTHORIZATION&#39;, or &#39;HEALTH_METRIC_DELETION&#39;.
         :type object_type: (optional) str
         :param data: 
         :type data: (optional) halo_third_party_sdk_model.data.Data

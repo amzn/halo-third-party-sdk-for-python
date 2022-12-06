@@ -23,45 +23,44 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from halo_third_party_sdk_model.activity_session import ActivitySession as ActivitySession_27e8fdd
-    from halo_third_party_sdk_model.activity_summary import ActivitySummary as ActivitySummary_241eb9fd
+    from halo_third_party_sdk_model.activity_summary_duration import ActivitySummaryDuration as ActivitySummaryDuration_c89a723c
 
 
-class Activity(object):
+class ActivitySummary(object):
     """
-    An object including a summary and a list of activities completed by the user on the given day.
+    An object containing daily activity summary information.
 
 
-    :param sessions: An array of activity sessions completed by the user on the given day.
-    :type sessions: (optional) list[halo_third_party_sdk_model.activity_session.ActivitySession]
-    :param summary: 
-    :type summary: (optional) halo_third_party_sdk_model.activity_summary.ActivitySummary
+    :param timestamp: The timestamp for when the activity summary was last computed in extended ISO 8601 date/time format (yyyy-mm-ddThh:mm:ss.mmmZ).
+    :type timestamp: (optional) str
+    :param duration: 
+    :type duration: (optional) halo_third_party_sdk_model.activity_summary_duration.ActivitySummaryDuration
 
     """
     deserialized_types = {
-        'sessions': 'list[halo_third_party_sdk_model.activity_session.ActivitySession]',
-        'summary': 'halo_third_party_sdk_model.activity_summary.ActivitySummary'
+        'timestamp': 'str',
+        'duration': 'halo_third_party_sdk_model.activity_summary_duration.ActivitySummaryDuration'
     }  # type: Dict
 
     attribute_map = {
-        'sessions': 'sessions',
-        'summary': 'summary'
+        'timestamp': 'timestamp',
+        'duration': 'duration'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, sessions=None, summary=None):
-        # type: (Optional[List[ActivitySession_27e8fdd]], Optional[ActivitySummary_241eb9fd]) -> None
-        """An object including a summary and a list of activities completed by the user on the given day.
+    def __init__(self, timestamp=None, duration=None):
+        # type: (Optional[str], Optional[ActivitySummaryDuration_c89a723c]) -> None
+        """An object containing daily activity summary information.
 
-        :param sessions: An array of activity sessions completed by the user on the given day.
-        :type sessions: (optional) list[halo_third_party_sdk_model.activity_session.ActivitySession]
-        :param summary: 
-        :type summary: (optional) halo_third_party_sdk_model.activity_summary.ActivitySummary
+        :param timestamp: The timestamp for when the activity summary was last computed in extended ISO 8601 date/time format (yyyy-mm-ddThh:mm:ss.mmmZ).
+        :type timestamp: (optional) str
+        :param duration: 
+        :type duration: (optional) halo_third_party_sdk_model.activity_summary_duration.ActivitySummaryDuration
         """
         self.__discriminator_value = None  # type: str
 
-        self.sessions = sessions
-        self.summary = summary
+        self.timestamp = timestamp
+        self.duration = duration
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -106,7 +105,7 @@ class Activity(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Activity):
+        if not isinstance(other, ActivitySummary):
             return False
 
         return self.__dict__ == other.__dict__

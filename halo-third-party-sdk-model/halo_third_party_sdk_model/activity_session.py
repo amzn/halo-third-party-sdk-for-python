@@ -26,6 +26,7 @@ if typing.TYPE_CHECKING:
     from halo_third_party_sdk_model.heart_rate import HeartRate as HeartRate_b817caf
     from halo_third_party_sdk_model.calorie_info import CalorieInfo as CalorieInfo_dfedd4eb
     from halo_third_party_sdk_model.step_info import StepInfo as StepInfo_c3062745
+    from halo_third_party_sdk_model.activity_session_duration import ActivitySessionDuration as ActivitySessionDuration_d633a03c
 
 
 class ActivitySession(object):
@@ -53,6 +54,8 @@ class ActivitySession(object):
     :type timestamp: (optional) str
     :param calorie_info: 
     :type calorie_info: (optional) halo_third_party_sdk_model.calorie_info.CalorieInfo
+    :param duration: 
+    :type duration: (optional) halo_third_party_sdk_model.activity_session_duration.ActivitySessionDuration
 
     """
     deserialized_types = {
@@ -65,7 +68,8 @@ class ActivitySession(object):
         'step_info': 'halo_third_party_sdk_model.step_info.StepInfo',
         'heart_rate': 'halo_third_party_sdk_model.heart_rate.HeartRate',
         'timestamp': 'str',
-        'calorie_info': 'halo_third_party_sdk_model.calorie_info.CalorieInfo'
+        'calorie_info': 'halo_third_party_sdk_model.calorie_info.CalorieInfo',
+        'duration': 'halo_third_party_sdk_model.activity_session_duration.ActivitySessionDuration'
     }  # type: Dict
 
     attribute_map = {
@@ -78,12 +82,13 @@ class ActivitySession(object):
         'step_info': 'stepInfo',
         'heart_rate': 'heartRate',
         'timestamp': 'timestamp',
-        'calorie_info': 'calorieInfo'
+        'calorie_info': 'calorieInfo',
+        'duration': 'duration'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, id=None, object_type=None, start_date_time=None, end_date_time=None, modified=None, automatic=None, step_info=None, heart_rate=None, timestamp=None, calorie_info=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[bool], Optional[bool], Optional[StepInfo_c3062745], Optional[HeartRate_b817caf], Optional[str], Optional[CalorieInfo_dfedd4eb]) -> None
+    def __init__(self, id=None, object_type=None, start_date_time=None, end_date_time=None, modified=None, automatic=None, step_info=None, heart_rate=None, timestamp=None, calorie_info=None, duration=None):
+        # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[bool], Optional[bool], Optional[StepInfo_c3062745], Optional[HeartRate_b817caf], Optional[str], Optional[CalorieInfo_dfedd4eb], Optional[ActivitySessionDuration_d633a03c]) -> None
         """An activity sessions completed by the user on the given day.
 
         :param id: A UUID identifying the activity session.
@@ -106,6 +111,8 @@ class ActivitySession(object):
         :type timestamp: (optional) str
         :param calorie_info: 
         :type calorie_info: (optional) halo_third_party_sdk_model.calorie_info.CalorieInfo
+        :param duration: 
+        :type duration: (optional) halo_third_party_sdk_model.activity_session_duration.ActivitySessionDuration
         """
         self.__discriminator_value = None  # type: str
 
@@ -119,6 +126,7 @@ class ActivitySession(object):
         self.heart_rate = heart_rate
         self.timestamp = timestamp
         self.calorie_info = calorie_info
+        self.duration = duration
 
     def to_dict(self):
         # type: () -> Dict[str, object]

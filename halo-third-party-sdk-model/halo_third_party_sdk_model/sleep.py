@@ -46,6 +46,10 @@ class Sleep(object):
     :type number_of_awakenings: (optional) int
     :param modified: A boolean flag denoting if this sleep session information was modified by the user.
     :type modified: (optional) bool
+    :param session_start_time: The date and time the session started, encoded in ISO8601 date/time format (yyyy-mm-ddThh:mm:ss.mmmZ).
+    :type session_start_time: (optional) str
+    :param session_end_time: The date and time the session ended, encoded in ISO8601 date/time format (yyyy-mm-ddThh:mm:ss.mmmZ).
+    :type session_end_time: (optional) str
 
     """
     deserialized_types = {
@@ -55,7 +59,9 @@ class Sleep(object):
         'efficiency': 'float',
         'onset_latency': 'float',
         'number_of_awakenings': 'int',
-        'modified': 'bool'
+        'modified': 'bool',
+        'session_start_time': 'str',
+        'session_end_time': 'str'
     }  # type: Dict
 
     attribute_map = {
@@ -65,12 +71,14 @@ class Sleep(object):
         'efficiency': 'efficiency',
         'onset_latency': 'onsetLatency',
         'number_of_awakenings': 'numberOfAwakenings',
-        'modified': 'modified'
+        'modified': 'modified',
+        'session_start_time': 'sessionStartTime',
+        'session_end_time': 'sessionEndTime'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, timestamp=None, score=None, duration=None, efficiency=None, onset_latency=None, number_of_awakenings=None, modified=None):
-        # type: (Optional[str], Optional[SleepScore_4065bcdd], Optional[SleepDuration_e0139bf7], Optional[float], Optional[float], Optional[int], Optional[bool]) -> None
+    def __init__(self, timestamp=None, score=None, duration=None, efficiency=None, onset_latency=None, number_of_awakenings=None, modified=None, session_start_time=None, session_end_time=None):
+        # type: (Optional[str], Optional[SleepScore_4065bcdd], Optional[SleepDuration_e0139bf7], Optional[float], Optional[float], Optional[int], Optional[bool], Optional[str], Optional[str]) -> None
         """An object including the sleep data for the user on the given day.
 
         :param timestamp: The timestamp for when the data was synced in extended ISO 8601 date/time format (yyyy-mm-ddThh:mm:ss.mmmZ).
@@ -87,6 +95,10 @@ class Sleep(object):
         :type number_of_awakenings: (optional) int
         :param modified: A boolean flag denoting if this sleep session information was modified by the user.
         :type modified: (optional) bool
+        :param session_start_time: The date and time the session started, encoded in ISO8601 date/time format (yyyy-mm-ddThh:mm:ss.mmmZ).
+        :type session_start_time: (optional) str
+        :param session_end_time: The date and time the session ended, encoded in ISO8601 date/time format (yyyy-mm-ddThh:mm:ss.mmmZ).
+        :type session_end_time: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
@@ -97,6 +109,8 @@ class Sleep(object):
         self.onset_latency = onset_latency
         self.number_of_awakenings = number_of_awakenings
         self.modified = modified
+        self.session_start_time = session_start_time
+        self.session_end_time = session_end_time
 
     def to_dict(self):
         # type: () -> Dict[str, object]

@@ -23,45 +23,50 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from halo_third_party_sdk_model.activity_session import ActivitySession as ActivitySession_27e8fdd
-    from halo_third_party_sdk_model.activity_summary import ActivitySummary as ActivitySummary_241eb9fd
 
 
-class Activity(object):
+class ActivitySessionDuration(object):
     """
-    An object including a summary and a list of activities completed by the user on the given day.
+    An object containing the user&#39;s light/moderate/intense activity durations during the workout session.
 
 
-    :param sessions: An array of activity sessions completed by the user on the given day.
-    :type sessions: (optional) list[halo_third_party_sdk_model.activity_session.ActivitySession]
-    :param summary: 
-    :type summary: (optional) halo_third_party_sdk_model.activity_summary.ActivitySummary
+    :param intense_activity: Amount (in seconds) of intense activity completed during the session.
+    :type intense_activity: (optional) float
+    :param moderate_activity: Amount (in seconds) of moderate activity completed during the session.
+    :type moderate_activity: (optional) float
+    :param light_activity: Amount (in seconds) of light activity completed during the session.
+    :type light_activity: (optional) float
 
     """
     deserialized_types = {
-        'sessions': 'list[halo_third_party_sdk_model.activity_session.ActivitySession]',
-        'summary': 'halo_third_party_sdk_model.activity_summary.ActivitySummary'
+        'intense_activity': 'float',
+        'moderate_activity': 'float',
+        'light_activity': 'float'
     }  # type: Dict
 
     attribute_map = {
-        'sessions': 'sessions',
-        'summary': 'summary'
+        'intense_activity': 'intenseActivity',
+        'moderate_activity': 'moderateActivity',
+        'light_activity': 'lightActivity'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, sessions=None, summary=None):
-        # type: (Optional[List[ActivitySession_27e8fdd]], Optional[ActivitySummary_241eb9fd]) -> None
-        """An object including a summary and a list of activities completed by the user on the given day.
+    def __init__(self, intense_activity=None, moderate_activity=None, light_activity=None):
+        # type: (Optional[float], Optional[float], Optional[float]) -> None
+        """An object containing the user&#39;s light/moderate/intense activity durations during the workout session.
 
-        :param sessions: An array of activity sessions completed by the user on the given day.
-        :type sessions: (optional) list[halo_third_party_sdk_model.activity_session.ActivitySession]
-        :param summary: 
-        :type summary: (optional) halo_third_party_sdk_model.activity_summary.ActivitySummary
+        :param intense_activity: Amount (in seconds) of intense activity completed during the session.
+        :type intense_activity: (optional) float
+        :param moderate_activity: Amount (in seconds) of moderate activity completed during the session.
+        :type moderate_activity: (optional) float
+        :param light_activity: Amount (in seconds) of light activity completed during the session.
+        :type light_activity: (optional) float
         """
         self.__discriminator_value = None  # type: str
 
-        self.sessions = sessions
-        self.summary = summary
+        self.intense_activity = intense_activity
+        self.moderate_activity = moderate_activity
+        self.light_activity = light_activity
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -106,7 +111,7 @@ class Activity(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Activity):
+        if not isinstance(other, ActivitySessionDuration):
             return False
 
         return self.__dict__ == other.__dict__
