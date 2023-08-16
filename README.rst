@@ -1,6 +1,7 @@
 .. raw:: html
 
     <embed>
+        <h1>Announcement: As of July 31, 2023, this repository is deprecated. The contents of this repository will remain available but we will no longer provide updates or accept new contributions and pull requests. https://www.aboutamazon.com/news/company-news/amazon-halo-discontinued</h1>
         <p align="center">
           <img src="https://play-lh.googleusercontent.com/yPeovJFdz6PQQlqLBoUSQ_Y48hZaTxpDse37aqV_6DiiQ83OhacJiThfZlEXDqJTqA=s180-rw">
           <br/>
